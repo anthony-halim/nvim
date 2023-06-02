@@ -1,3 +1,13 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- nvim-tree: disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- nvim-tree: set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true
@@ -42,10 +52,5 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
-vim.o.scrolloff = 8
-vim.o.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-
 vim.o.colorcolumn = "100"
-
 
