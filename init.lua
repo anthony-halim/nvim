@@ -4,6 +4,7 @@ require("user.set")
 require("user.telescope")
 require("user.treesitter")
 require("user.lsp")
+require("user.themes")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
