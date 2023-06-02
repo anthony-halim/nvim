@@ -61,30 +61,27 @@ require('lazy').setup({
 
 			-- Adds a number of user-friendly snippets
 			'rafamadriz/friendly-snippets',
+
+			-- autopairing of (){}[] etc
+			{
+				"windwp/nvim-autopairs",
+				opts = {
+					fast_wrap = {},
+					disable_filetype = { "TelescopePrompt", "vim" },
+				},
+				config = function(_, opts)
+					require("nvim-autopairs").setup(opts)
+
+					-- setup cmp for autopairs
+					local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+					require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+				end,
+			},
 		},
 	},
 
 	-- Useful plugin to show you pending keybinds.
 	{ 'folke/which-key.nvim', opts = {} },
-	{
-		-- Adds git releated signs to the gutter, as well as utilities for managing changes
-		'lewis6991/gitsigns.nvim',
-		opts = {
-			-- See `:help gitsigns.txt`
-			signs = {
-				add = { text = '+' },
-				change = { text = '~' },
-				delete = { text = '_' },
-				topdelete = { text = '‾' },
-				changedelete = { text = '~' },
-			},
-			on_attach = function(bufnr)
-				vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
-				vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
-				vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-			end,
-		},
-	},
 
 	{
 		'rebelot/kanagawa.nvim',
