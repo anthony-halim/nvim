@@ -15,9 +15,7 @@ bufferline.setup {
     show_tab_indicators = true,
     separator_style = "thick",
     hover = {
-      enabled = true,
-      delay = 200,
-      reveal = { 'close' }
+      enabled = false,
     },
   }
 }
