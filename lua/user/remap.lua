@@ -1,6 +1,7 @@
 -- Code editing
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block ([J])up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move higlighted block ([K])down" })
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat file" })
 
 --This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -10,12 +11,11 @@ vim.keymap.set("v", "<C-c>", [["+Y]])
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Format
-vim.keymap.set("n", "<leader><S-f>", vim.lsp.buf.format, { desc = "[F]ormat file" })
 
 -- NvimTree
-vim.keymap.set('n', '<leader>te', ":NvimTreeToggle<cr>", { silent = true })
-vim.keymap.set('n', '<leader>tf', ":NvimTreeFocus<cr>", { silent = true })
-vim.keymap.set('n', '<leader>tr', ":NvimTreeRefresh<cr>", { silent = true })
+vim.keymap.set('n', '<leader>ee', ":NvimTreeToggle<cr>", { silent = true, desc = "[E]xpand [E]xplorer" })
+vim.keymap.set('n', '<leader>ef', ":NvimTreeFocus<cr>", { silent = true, desc = "[E]xplorer [F]ocus" })
+vim.keymap.set('n', '<leader>er', ":NvimTreeRefresh<cr>", { silent = true, desc = "[E]xplorer [R]efresh" })
 
 -- Telescope
 -- See `:help telescope.builtin`
