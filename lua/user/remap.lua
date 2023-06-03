@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>er', ":NvimTreeRefresh<cr>", { silent = true, desc 
 
 -- Telescope
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -66,6 +66,10 @@ vim.keymap.set('n', '<M-{>', [[:resize +3<cr>]], { desc = 'Increase height of cu
 vim.keymap.set('n', '<M-}>', [[:resize -3<cr>]], { desc = 'Decrease height of current split' })
 
 -- Floating terminal
-vim.keymap.set('n', '<leader>tn', [[:FloatermNew<cr>]], { desc = 'Open new floating terminal' })
+vim.keymap.set('n', '<leader>tf', [[:FloatermNew<cr>]], { desc = '[T]erm: [F]loating Terminal' })
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
 vim.keymap.set('t', '<C-c>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
+
+-- Jumps
+vim.keymap.set('n', 'gj', [[<C-O>]], { desc = 'Go to previous jump' })
+
