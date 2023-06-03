@@ -8,6 +8,10 @@ vim.g.loaded_netrwPlugin = 1
 -- nvim-tree: set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+-- Split settings
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true

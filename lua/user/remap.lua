@@ -13,7 +13,9 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat file" })
 
 -- NvimTree
-vim.keymap.set('n', '<leader>pe', ":NvimTreeToggle<cr>")
+vim.keymap.set('n', '<leader>te', ":NvimTreeToggle<cr>", { silent = true })
+vim.keymap.set('n', '<leader>tf', ":NvimTreeFocus<cr>", { silent = true })
+vim.keymap.set('n', '<leader>tr', ":NvimTreeRefresh<cr>", { silent = true })
 
 -- Telescope
 -- See `:help telescope.builtin`
@@ -38,3 +40,16 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Splits
+vim.keymap.set('n', '<M-;>', [[:split<cr>]], { desc = 'Split (horizontal)'})
+vim.keymap.set('n', '<M-\'>', [[:vsplit<cr>]], { desc = 'Split (vertical)'})
+vim.keymap.set('n', '<M-w>', [[:q<cr>]], { desc = 'Close current split'})
+vim.keymap.set('n', '<M-h>', [[<C-\><C-n><C-w>h]], { desc = 'Go to left split'})
+vim.keymap.set('n', '<M-j>', [[<C-\><C-n><C-w>j]], { desc = 'Go to bottom split'})
+vim.keymap.set('n', '<M-k>', [[<C-\><C-n><C-w>k]], { desc = 'Go to above split'})
+vim.keymap.set('n', '<M-l>', [[<C-\><C-n><C-w>l]], { desc = 'Go to right split'})
+vim.keymap.set('n', '<M-[>', [[:vertical resize +3<cr>]], { desc = 'Increase width of current split'})
+vim.keymap.set('n', '<M-]>', [[:vertical resize -3<cr>]], { desc = 'Decrease width of current split'})
+vim.keymap.set('n', '<M-{>', [[:resize +3<cr>]], { desc = 'Increase height of current split'})
+vim.keymap.set('n', '<M-}>', [[:resize -3<cr>]], { desc = 'Decrease height of current split'})
