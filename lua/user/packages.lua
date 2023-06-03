@@ -41,7 +41,7 @@ require('lazy').setup({
 
 			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ 'j-hui/fidget.nvim', opts = {} },
+			{ 'j-hui/fidget.nvim',       opts = {} },
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			'folke/neodev.nvim',
@@ -81,7 +81,7 @@ require('lazy').setup({
 	},
 
 	-- Useful plugin to show you pending keybinds.
-	{ 'folke/which-key.nvim', opts = {} },
+	{ 'folke/which-key.nvim',          opts = {} },
 
 	{
 		'rebelot/kanagawa.nvim',
@@ -117,7 +117,7 @@ require('lazy').setup({
 	},
 
 	-- "gc" to comment visual regions/lines
-	{ 'numToStr/Comment.nvim', opts = {} },
+	{ 'numToStr/Comment.nvim',         opts = {} },
 
 	-- Fuzzy Finder (files, lsp, etc)
 	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -154,4 +154,5 @@ require('lazy').setup({
 			require("nvim-tree").setup {}
 		end,
 	}
+
 }, {})
