@@ -87,6 +87,21 @@ require('lazy').setup({
 	{ 'folke/which-key.nvim',          opts = {} },
 
 	{
+		-- Adds git releated signs to the gutter, as well as utilities for managing changes
+		'lewis6991/gitsigns.nvim',
+		opts = {
+			-- See `:help gitsigns.txt`
+			signs = {
+				add = { text = '+' },
+				change = { text = '~' },
+				delete = { text = '_' },
+				topdelete = { text = '‾' },
+				changedelete = { text = '~' },
+			},
+		},
+	},
+
+	{
 		'rebelot/kanagawa.nvim',
 		priority = 1000,
 		config = function()
@@ -100,7 +115,6 @@ require('lazy').setup({
 		-- See `:help lualine.txt`
 		opts = {
 			options = {
-				icons_enabled = false,
 				theme = 'onedark',
 				component_separators = '|',
 				section_separators = '',
@@ -156,6 +170,12 @@ require('lazy').setup({
 		config = function()
 			require("nvim-tree").setup {}
 		end,
-	}
+	},
+
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons'
+	},
 
 }, {})
