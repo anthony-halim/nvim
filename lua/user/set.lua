@@ -25,9 +25,8 @@ vim.wo.number = true
 vim.o.relativenumber = true
 
 -- Make line highlight
-vim.o.cursorline = true
 vim.o.cursorcolumn = false
-vim.o.cursorlineopt = "number,line"
+vim.o.cursorlineopt = "number"
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -63,4 +62,3 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 vim.o.colorcolumn = "100"
-
