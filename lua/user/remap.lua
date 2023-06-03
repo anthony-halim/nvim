@@ -1,8 +1,17 @@
 -- Code editing
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block ([J])up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move higlighted block ([K])down" })
+vim.keymap.set("n", "<leader><S-f>", vim.lsp.buf.format, { desc = "[F]ormat file" })
 
---This is going to get me cancelled
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Move line to previous line" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move half page down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move half page up" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next match" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev match" })
+vim.keymap.set("n", "<leader>rf", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = '[R]ename in [F]ile' })
+
+-- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("v", "<C-c>", [["+Y]])
 
@@ -10,12 +19,11 @@ vim.keymap.set("v", "<C-c>", [["+Y]])
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Format
-vim.keymap.set("n", "<leader><S-f>", vim.lsp.buf.format, { desc = "[F]ormat file" })
 
 -- NvimTree
-vim.keymap.set('n', '<leader>te', ":NvimTreeToggle<cr>", { silent = true })
-vim.keymap.set('n', '<leader>tf', ":NvimTreeFocus<cr>", { silent = true })
-vim.keymap.set('n', '<leader>tr', ":NvimTreeRefresh<cr>", { silent = true })
+vim.keymap.set('n', '<leader>ee', ":NvimTreeToggle<cr>", { silent = true, desc = "[E]xpand [E]xplorer" })
+vim.keymap.set('n', '<leader>ef', ":NvimTreeFocus<cr>", { silent = true, desc = "[E]xplorer [F]ocus" })
+vim.keymap.set('n', '<leader>er', ":NvimTreeRefresh<cr>", { silent = true, desc = "[E]xplorer [R]efresh" })
 
 -- Telescope
 -- See `:help telescope.builtin`
@@ -34,7 +42,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', function ()
+vim.keymap.set('n', '<leader>sr', function()
   require('telescope.builtin').resume(require('telescope.themes').get_ivy({}))
 end, { desc = '[S]earch [R]esume' })
 
@@ -56,3 +64,8 @@ vim.keymap.set('n', '<M-[>', [[:vertical resize +3<cr>]], { desc = 'Increase wid
 vim.keymap.set('n', '<M-]>', [[:vertical resize -3<cr>]], { desc = 'Decrease width of current split' })
 vim.keymap.set('n', '<M-{>', [[:resize +3<cr>]], { desc = 'Increase height of current split' })
 vim.keymap.set('n', '<M-}>', [[:resize -3<cr>]], { desc = 'Decrease height of current split' })
+
+-- Floating terminal
+vim.keymap.set('n', '<leader>tn', [[:FloatermNew<cr>]], { desc = 'Open new floating terminal' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
+vim.keymap.set('t', '<C-c>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
