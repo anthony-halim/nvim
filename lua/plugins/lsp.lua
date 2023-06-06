@@ -50,9 +50,10 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
+  eslint = {},
 
   lua_ls = {
     Lua = {

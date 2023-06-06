@@ -66,9 +66,8 @@ vim.keymap.set('n', '<M-{>', [[:resize +3<cr>]], { desc = 'Increase height of cu
 vim.keymap.set('n', '<M-}>', [[:resize -3<cr>]], { desc = 'Decrease height of current split' })
 
 -- Floating terminal
-vim.keymap.set('n', '<leader>tf', [[:FloatermNew<cr>]], { desc = '[T]erm: [F]loating Terminal' })
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
-vim.keymap.set('t', '<C-c>', [[<C-\><C-n>:q!<CR>]], { silent = true, desc = 'Exit terminal' })
+vim.keymap.set('n', '<leader>tf', [[:FloatermToggle<CR>]], { desc = '[T]erm: [F]loating Terminal' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:FloatermToggle<CR>]], { desc = '[T]erm: [F]loating Terminal' })
 
 -- Jumps
 vim.keymap.set('n', 'gj', [[<C-O>]], { desc = 'Go to previous jump' })
