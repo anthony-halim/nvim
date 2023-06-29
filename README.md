@@ -1,4 +1,5 @@
-# 💤 LazyVim
+# MonkaVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+NeoVim configuration extended from [LazyVim](https://github.com/LazyVim/LazyVim).
+
+Refer to the [LazyVim documentation](https://lazyvim.github.io/installation) for base configuration.
