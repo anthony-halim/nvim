@@ -1,7 +1,6 @@
 return {
   "goolord/alpha-nvim",
   opts = function(_, opts)
-    -- Logo
     local raw_logo = [[
     ⣿⣿⣿⣿⣿⣿⡿⣟⠻⠯⠭⠉⠛⠋⠉⠉⠛⠻⢿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⡽⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⠀⠈⠙⢿⣿⣿⣿
@@ -14,15 +13,11 @@ return {
     ⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠋⠛⠛⠛⠀⠀⣤⣾
     ⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠛⠁⣰⣿⣿
     ⣿⣿⣿⣿⣿⣷⣦⣤⣤⣤⣤⣄⣀⣀⣀⣀⣀⣠⣤⣤⣤⣾⣿⣿⣿
+    
+        [ anthony-halim ]
     ]]
+    local packed_logo = vim.split(raw_logo, "\n", { trimempty = true })
 
-    -- Subheader
-    local datetime = os.date("%d-%m-%Y %H:%M")
-    local welcome_message = "Welcome, " .. os.getenv("NAME") .. "!"
-    local subheader = datetime .. " | " .. welcome_message
-
-    local header_val = raw_logo .. "\n" .. subheader
-
-    opts.section.header.val = vim.split(header_val, "\n", { trimempty = true })
+    opts.section.header.val = packed_logo
   end,
 }
