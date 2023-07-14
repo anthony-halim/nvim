@@ -22,3 +22,6 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- This is going to get me cancelled
 vim.keymap.set("v", "<C-c>", [["+Y]])
+
+-- NeoTree
+vim.keymap.set("n", "<leader>be", ":Neotree focus<cr>", { silent = true, desc = "Switch to Explorer Tree" })
